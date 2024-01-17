@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2237c4c2-098b-404f-925d-301a7097feba" name="Changes" comment="t">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2237c4c2-098b-404f-925d-301a7097feba" name="Changes" comment="pder so">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Schueler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schueler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchuelerGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchuelerGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SchuelerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchuelerGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +53,20 @@
       <recent name="C:\Users\samuel.stroot\IdeaProjects\Schuelerlist\src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="SchuelerGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SchuelerGUI" />
+      <module name="Schuelerlist" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SchuelerGUI" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,11 +83,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705404968718</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pder so">
+      <option name="closed" value="true" />
+      <created>1705519622752</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705519622752</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="t" />
-    <option name="LAST_COMMIT_MESSAGE" value="t" />
+    <MESSAGE value="pder so" />
+    <option name="LAST_COMMIT_MESSAGE" value="pder so" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Schuelerliste$SchuelerGUI.ic" NAME="SchuelerGUI Coverage Results" MODIFIED="1705522901201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
