@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2237c4c2-098b-404f-925d-301a7097feba" name="Changes" comment="pder so">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Schueler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schueler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchuelerGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchuelerGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SchuelerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchuelerGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,9 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2b2EatOvjzAQfjuFepb16eeY1T0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">

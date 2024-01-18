@@ -25,7 +25,7 @@ public class SchuelerGUI {
                     nachnameFeld.setText("");
                     zeitFeld.setText("");
                     sportliste.append(schueler);
-                System.out.println(schueler.getVorname() + " " + schueler.getNachname() + " " + schueler.getZeit());
+                    System.out.println(schueler.getVorname() + " " + schueler.getNachname() + " " + schueler.getZeit());
 
 
             }
@@ -33,41 +33,43 @@ public class SchuelerGUI {
         sortierenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (!sportliste.isEmpty()) {
+                    sportliste.toFirst();
+                    double x = sportliste.getContent().getZeit();
+                    sportliste.next();
+                    while (sportliste.hasAccess()) {
+                        if (sportliste.getContent().getZeit() < x) {
 
-                sportliste.toFirst();
-                double x = sportliste.getContent().getZeit();
-                sportliste.next();
-                while (sportliste.hasAccess()) {
-                    if (sportliste.getContent().getZeit() < x) {
-
-                        String nachname = sportliste.getContent().getNachname();
-                        String vorname = sportliste.getContent().getVorname();
-                        Double zeit = sportliste.getContent().getZeit();
-                        sportliste.remove();
-                        sportliste.toFirst();
-                        schueler = new Schueler(vorname, nachname, zeit);
-                        sportliste.insert(schueler);
-                        sportliste.toFirst();
-                        sportliste.next();
-                        x=sportliste.getContent().getZeit();
-                        sportliste.next();
+                            String nachname = sportliste.getContent().getNachname();
+                            String vorname = sportliste.getContent().getVorname();
+                            Double zeit = sportliste.getContent().getZeit();
+                            sportliste.remove();
+                            sportliste.toFirst();
+                            schueler = new Schueler(vorname, nachname, zeit);
+                            sportliste.insert(schueler);
+                            sportliste.toFirst();
+                            sportliste.next();
+                            x = sportliste.getContent().getZeit();
+                            sportliste.next();
 
 
-                    }else{
-                        x=sportliste.getContent().getZeit();
-                        sportliste.next();
+                        } else {
+                            x = sportliste.getContent().getZeit();
+                            sportliste.next();
+                        }
+
                     }
 
+                    sportliste.toFirst();
+                    System.out.println("////");
+                    while (sportliste.hasAccess()) {
+                        System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
+                        sportliste.next();
+                    }
+                    System.out.println("////");
                 }
-
-                sportliste.toFirst();
-                System.out.println("////");
-                while (sportliste.hasAccess()){
-                    System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
-                    sportliste.next();
-                }
-                System.out.println("////");
             }
+
         });
     }
 
