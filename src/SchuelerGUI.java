@@ -12,6 +12,14 @@ public class SchuelerGUI {
     private JTextField zeitFeld;
     private JButton hinzufügenButton;
     private JButton sortierenButton;
+    private JButton besterButton;
+    private JTextField besterFeld;
+    private JButton einObjektLöschenButton;
+    private JTextField löscheNachnameFeld;
+    private JTextField löscheZeitFeld;
+    private JTextField löscheVornameFeld;
+    private JButton zeitVonButton;
+    private JTextField zeitVonFeld;
 
 
     public SchuelerGUI() {
@@ -20,12 +28,46 @@ public class SchuelerGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                if (sportliste.isEmpty()) {
                     schueler = new Schueler(vornameFeld.getText(), nachnameFeld.getText(), Double.valueOf(zeitFeld.getText()));
                     vornameFeld.setText("");
                     nachnameFeld.setText("");
                     zeitFeld.setText("");
                     sportliste.append(schueler);
-                    System.out.println(schueler.getVorname() + " " + schueler.getNachname() + " " + schueler.getZeit());
+                    sportliste.toFirst();
+                    /*
+                    while (sportliste.hasAccess()) {
+                        System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
+                        sportliste.next();
+                    }*/
+
+                    //System.out.println(schueler.getVorname()+" "+schueler.getNachname()+" "+schueler.getZeit());
+                } else
+
+                {
+                    schueler = new Schueler(vornameFeld.getText(), nachnameFeld.getText(), Double.valueOf(zeitFeld.getText()));
+                    vornameFeld.setText("");
+                    nachnameFeld.setText("");
+                    zeitFeld.setText("");
+                    sportliste.toFirst();
+                    while (sportliste.hasAccess() && schueler.getZeit() > sportliste.getContent().getZeit()) {
+                        sportliste.next();
+                    }
+                    if (sportliste.hasAccess()) {
+                        sportliste.insert(schueler);
+                    } else {
+                        sportliste.append(schueler);
+                    }
+
+                    sportliste.toFirst();
+                    /*
+                    while (sportliste.hasAccess()) {
+                        System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
+                        sportliste.next();
+                    }
+                    */
+
+                }
 
 
             }
@@ -33,43 +75,56 @@ public class SchuelerGUI {
         sortierenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!sportliste.isEmpty()) {
-                    sportliste.toFirst();
-                    double x = sportliste.getContent().getZeit();
+                sportliste.toFirst();
+                System.out.println("----------");
+                while (sportliste.hasAccess()) {
+
+                    System.out.println(sportliste.getContent().getVorname() + ", " + sportliste.getContent().getNachname() + ", " + sportliste.getContent().getZeit());
+
                     sportliste.next();
-                    while (sportliste.hasAccess()) {
-                        if (sportliste.getContent().getZeit() < x) {
 
-                            String nachname = sportliste.getContent().getNachname();
-                            String vorname = sportliste.getContent().getVorname();
-                            Double zeit = sportliste.getContent().getZeit();
-                            sportliste.remove();
-                            sportliste.toFirst();
-                            schueler = new Schueler(vorname, nachname, zeit);
-                            sportliste.insert(schueler);
-                            sportliste.toFirst();
-                            sportliste.next();
-                            x = sportliste.getContent().getZeit();
-                            sportliste.next();
-
-
-                        } else {
-                            x = sportliste.getContent().getZeit();
-                            sportliste.next();
-                        }
-
-                    }
-
-                    sportliste.toFirst();
-                    System.out.println("////");
-                    while (sportliste.hasAccess()) {
-                        System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
-                        sportliste.next();
-                    }
-                    System.out.println("////");
                 }
+                System.out.println("----------");
             }
 
+        });
+        besterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                    sportliste.toFirst();
+                    besterFeld.setText(sportliste.getContent().getVorname() + ", " + sportliste.getContent().getNachname() + ", " + sportliste.getContent().getZeit());
+
+            }
+        });
+        einObjektLöschenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            sportliste.toFirst();
+            while(sportliste.hasAccess()){
+                System.out.println(sportliste.getContent().getVorname());
+                if(sportliste.getContent().getVorname()==löscheVornameFeld.getText()&&sportliste.getContent().getNachname()==löscheNachnameFeld.getText()&&sportliste.getContent().getZeit()==Double.valueOf(löscheZeitFeld.getText())){
+                    System.out.println("test");
+                    sportliste.remove();
+                    löscheVornameFeld.setText("");
+                    löscheNachnameFeld.setText("");
+                    löscheZeitFeld.setText("");
+                    System.out.println("--------removed--------");
+                }else sportliste.next();
+            }
+                System.out.println("Not inside List / Done");
+            }
+        });
+        zeitVonButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            sportliste.toFirst();
+            while(sportliste.hasAccess()){
+                if(sportliste.getContent().getNachname()==zeitVonFeld.getText()){
+                zeitVonFeld.setText(String.valueOf(sportliste.getContent().getZeit()));
+                }else sportliste.next();
+            }
+            }
         });
     }
 
