@@ -109,7 +109,8 @@ public class SchuelerGUI {
                  Double zeit=sportliste.getContent().getZeit();
                  int result=vornameL.compareTo(vorname);
                  int result1=nachnameL.compareTo(nachname);
-                if(result==0){
+                 int result2=zeitL.compareTo(zeit);
+                if(result==0&&result1==0&&result2==0){
                     sportliste.remove();
                     löscheVornameFeld.setText("");
                     löscheNachnameFeld.setText("");

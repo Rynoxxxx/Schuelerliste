@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2237c4c2-098b-404f-925d-301a7097feba" name="Changes" comment="verstehe fehler niet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2237c4c2-098b-404f-925d-301a7097feba" name="Changes" comment="looooooooooool">
       <change beforePath="$PROJECT_DIR$/src/SchuelerGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchuelerGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SchuelerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchuelerGUI.java" afterDir="false" />
     </list>
@@ -99,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706629004423</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="looooooooooool">
+      <option name="closed" value="true" />
+      <created>1706723088935</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706723088935</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,7 +124,8 @@
     <MESSAGE value="t" />
     <MESSAGE value="pder so" />
     <MESSAGE value="verstehe fehler niet" />
-    <option name="LAST_COMMIT_MESSAGE" value="verstehe fehler niet" />
+    <MESSAGE value="looooooooooool" />
+    <option name="LAST_COMMIT_MESSAGE" value="looooooooooool" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Schuelerliste$SchuelerGUI.ic" NAME="SchuelerGUI Coverage Results" MODIFIED="1705522901201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
