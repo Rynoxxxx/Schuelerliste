@@ -6,7 +6,6 @@ public class SchuelerGUI {
     List<Schueler> sportliste;
     Schueler schueler;
     private JPanel Panel;
-    private JTextArea textArea1;
     private JTextField vornameFeld;
     private JTextField nachnameFeld;
     private JTextField zeitFeld;
