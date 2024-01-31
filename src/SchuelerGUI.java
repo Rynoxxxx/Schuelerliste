@@ -27,39 +27,37 @@ public class SchuelerGUI {
         hinzufügenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                if (sportliste.isEmpty()) {
-                    schueler = new Schueler(vornameFeld.getText(), nachnameFeld.getText(), Double.valueOf(zeitFeld.getText()));
-                    vornameFeld.setText("");
-                    nachnameFeld.setText("");
-                    zeitFeld.setText("");
-                    sportliste.append(schueler);
-                    sportliste.toFirst();
+                if(vornameFeld.getText().matches("^[\\p{L}\\p{M}A-Za-z]+$") && nachnameFeld.getText().matches("^[\\p{L}\\p{M}A-Za-z]+$")) {
+                    if (sportliste.isEmpty()) {
+                        schueler = new Schueler(vornameFeld.getText(), nachnameFeld.getText(), Double.valueOf(zeitFeld.getText()));
+                        vornameFeld.setText("");
+                        nachnameFeld.setText("");
+                        zeitFeld.setText("");
+                        sportliste.append(schueler);
+                        sportliste.toFirst();
                     /*
                     while (sportliste.hasAccess()) {
                         System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
                         sportliste.next();
                     }*/
 
-                    //System.out.println(schueler.getVorname()+" "+schueler.getNachname()+" "+schueler.getZeit());
-                } else
-
-                {
-                    schueler = new Schueler(vornameFeld.getText(), nachnameFeld.getText(), Double.valueOf(zeitFeld.getText()));
-                    vornameFeld.setText("");
-                    nachnameFeld.setText("");
-                    zeitFeld.setText("");
-                    sportliste.toFirst();
-                    while (sportliste.hasAccess() && schueler.getZeit() > sportliste.getContent().getZeit()) {
-                        sportliste.next();
-                    }
-                    if (sportliste.hasAccess()) {
-                        sportliste.insert(schueler);
+                        //System.out.println(schueler.getVorname()+" "+schueler.getNachname()+" "+schueler.getZeit());
                     } else {
-                        sportliste.append(schueler);
-                    }
+                        schueler = new Schueler(vornameFeld.getText(), nachnameFeld.getText(), Double.valueOf(zeitFeld.getText()));
+                        vornameFeld.setText("");
+                        nachnameFeld.setText("");
+                        zeitFeld.setText("");
+                        sportliste.toFirst();
+                        while (sportliste.hasAccess() && schueler.getZeit() > sportliste.getContent().getZeit()) {
+                            sportliste.next();
+                        }
+                        if (sportliste.hasAccess()) {
+                            sportliste.insert(schueler);
+                        } else {
+                            sportliste.append(schueler);
+                        }
 
-                    sportliste.toFirst();
+                        sportliste.toFirst();
                     /*
                     while (sportliste.hasAccess()) {
                         System.out.println(sportliste.getContent().getVorname() + " " + sportliste.getContent().getNachname() + " " + sportliste.getContent().getZeit());
@@ -67,9 +65,9 @@ public class SchuelerGUI {
                     }
                     */
 
+                    }
+
                 }
-
-
             }
         });
         sortierenButton.addActionListener(new ActionListener() {
@@ -101,18 +99,28 @@ public class SchuelerGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
             sportliste.toFirst();
-            while(sportliste.hasAccess()){
-                System.out.println(sportliste.getContent().getVorname());
-                if(sportliste.getContent().getVorname()==löscheVornameFeld.getText()&&sportliste.getContent().getNachname()==löscheNachnameFeld.getText()&&sportliste.getContent().getZeit()==Double.valueOf(löscheZeitFeld.getText())){
-                    System.out.println("test");
+             while(sportliste.hasAccess()){
+                //(sportliste.getContent().getVorname()==löscheVornameFeld.getText())&&(sportliste.getContent().getNachname()==löscheNachnameFeld.getText())&&(sportliste.getContent().getZeit()==Double.valueOf(löscheZeitFeld.getText()))
+                 String vornameL=löscheVornameFeld.getText();
+                 String vorname=sportliste.getContent().getVorname();
+                 String nachnameL=löscheNachnameFeld.getText();
+                 String nachname=sportliste.getContent().getNachname();
+                 Double zeitL=Double.valueOf(löscheZeitFeld.getText());
+                 Double zeit=sportliste.getContent().getZeit();
+                 int result=vornameL.compareTo(vorname);
+                 int result1=nachnameL.compareTo(nachname);
+                if(result==0){
                     sportliste.remove();
                     löscheVornameFeld.setText("");
                     löscheNachnameFeld.setText("");
                     löscheZeitFeld.setText("");
                     System.out.println("--------removed--------");
-                }else sportliste.next();
+                    return;
+                }
+                else
+                    sportliste.next();
             }
-                System.out.println("Not inside List / Done");
+                System.out.println("Not Inside List");
             }
         });
         zeitVonButton.addActionListener(new ActionListener() {
@@ -120,7 +128,11 @@ public class SchuelerGUI {
             public void actionPerformed(ActionEvent e) {
             sportliste.toFirst();
             while(sportliste.hasAccess()){
-                if(sportliste.getContent().getNachname()==zeitVonFeld.getText()){
+                String nachnameG=zeitVonFeld.getText();
+                String nachname=sportliste.getContent().getNachname();
+                int result=nachnameG.compareTo(nachname);
+                //sportliste.getContent().getNachname()==zeitVonFeld.getText()
+                if(result==0){
                 zeitVonFeld.setText(String.valueOf(sportliste.getContent().getZeit()));
                 }else sportliste.next();
             }
